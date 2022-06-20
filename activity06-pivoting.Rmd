@@ -1,6 +1,6 @@
 ---
 title: "Activity 6"
-author: "Name"
+author: "Sajal"
 output: github_document
 editor_options: 
   markdown: 
@@ -27,7 +27,7 @@ The `by_speaker` dataset summarizes the total number of words spoken by main cha
 ![FRIENDS tv show logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Friends_logo.svg/1186px-Friends_logo.svg.png)
 
 ```{r load_data, message=FALSE}
-by_speaker <- read_csv(here::here("data","by_speaker.csv"))
+(by_speaker <- read_csv(here::here("data","by_speaker.csv")))
 ```
 
 In the `load_data` chunk, notice that I am using a new function: the `here` function from `{here}` (typed as `here::here` or in `<package>::<function>` format).
@@ -77,7 +77,8 @@ friends_tidy <- by_speaker %>%
     values_to = "Words"
   )
 
-friends_tidy
+friends_tidy %>%
+  knitr::kable()
 ```
 
 Notice that the columns for each season have a space in them: "Season"SPACE"Number".
